@@ -1,0 +1,32 @@
+[
+  {
+    "study_id": "Mahroum2014_AOSD_review",
+    "cohort_id": "Mahroum2014_AOSD_review_C0",
+    "disease_id": "AINF_AOSD",
+    "sample_size": null,
+    "age": null,
+    "sex": null,
+    "country": null,
+    "ancestry_as_reported": null,
+    "setting": "Narrative review (Journal of Autoimmunity 2014;48-49:34-37); no own patients. Pseudo-cohort container for statements the review attributes to cited primary studies; NOT an independent cohort and must not be pooled.",
+    "severity": null,
+    "diagnostic_definition": "Not defined by the review for a cohort; mentions Yamaguchi, Cush and Fautrel criteria (Table 1)",
+    "inclusion_criteria": null,
+    "exclusion_criteria": null,
+    "study_period": null,
+    "follow_up": null,
+    "institution": "Sheba Medical Center, Tel-Hashomer (authors' affiliation; not a study site)",
+    "registry": null,
+    "possible_overlap": true,
+    "overlap_with": [
+      "Kong2010_AOSD_104cases(not_extracted)",
+      "Arlet2006_RHS_AOSD(not_extracted)",
+      "Fautrel2001_ferritin(not_extracted)",
+      "Fautrel2002_criteria(not_extracted)",
+      "Magadur-Joly1995_incidence(not_extracted)",
+      "Pouchot1991_62pts(not_extracted)",
+      "Ohta1990_Japan(not_extracted)",
+      "Efthimiou2006_review(not_extracted)"
+    ]
+  }
+]
