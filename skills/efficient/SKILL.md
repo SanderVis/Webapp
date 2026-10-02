@@ -1,6 +1,6 @@
 ---
 name: efficient
-description: Houdt het werk tokenzuinig. Altijd actief in elk gesprek en elke taak - korte directe antwoorden, gericht zoeken en lezen, PDF's eerst omzetten naar markdown, en een klein geheugenbestand per project. Gebruik dit ook als de gebruiker niet om efficiëntie vraagt, en zeker bij PDF's, grote bestanden, lange sessies of herhaalde taken. Geeft uitgebreide antwoorden zodra de gebruiker erom vraagt.
+description: Houdt het werk tokenzuinig. Altijd actief in elk gesprek en elke taak - korte directe antwoorden, gericht zoeken en lezen, PDF's eerst omzetten naar markdown, een klein geheugenbestand per project, en bij grotere taken plannen met Opus en uitvoeren met Sonnet. Gebruik dit ook als de gebruiker niet om efficiëntie vraagt, en zeker bij PDF's, grote bestanden, lange sessies, herhaalde taken of meerstapsplannen. Geeft uitgebreide antwoorden zodra de gebruiker erom vraagt.
 ---
 
 # Efficiënt werken
@@ -17,6 +17,9 @@ Doel: zo min mogelijk tokens, zonder kwaliteit te verliezen. Taal: Nederlands, z
 - Lees niets opnieuw dat al in het gesprek staat.
 - Zware zoektaken (veel bestanden, brede vragen): subagent, zodat alleen de conclusie terugkomt. Kleine taken zelf doen, een subagent kost zelf ook tokens.
 - Lang gesprek: stel voor om samen te vatten en opnieuw te beginnen.
+
+## Plannen en uitvoeren
+Niet-triviale taken (meerdere stappen, meerdere bestanden, ontwerpkeuzes): laat een subagent met `model: opus` het plan maken, voer het uit met `model: sonnet`. Kleine taken doe je direct. Zie `references/opus-sonnet.md`.
 
 ## PDF's
 Lees nooit een ruwe PDF. Zet hem eerst om, zie `references/pdf.md`.
