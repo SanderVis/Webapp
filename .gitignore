@@ -1,1 +1,5 @@
 ignota-evidence/skill/ignota-evidence-workspace/iteration-*/
+# bronbestanden (auteursrechtelijk beschermd) niet in git
+ignota-evidence/data/*/raw/*.pdf
+ignota-evidence/data/*/raw/*.txt
+!ignota-evidence/data/*/raw/fixture*.txt

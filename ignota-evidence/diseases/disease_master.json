@@ -124,5 +124,17 @@
     ],
     "subtypes": [],
     "status": "pilot_pending"
+  },
+  {
+    "disease_id": "VAS_MPA",
+    "name": "Microscopische polyangiitis",
+    "category": "vasculitis",
+    "cluster": "anca_associated_vasculitis",
+    "synonyms": [
+      "microscopic polyangiitis",
+      "MPA"
+    ],
+    "subtypes": [],
+    "status": "pilot_extra"
   }
 ]
