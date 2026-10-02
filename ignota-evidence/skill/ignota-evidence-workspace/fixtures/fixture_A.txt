@@ -1,0 +1,21 @@
+*** TEST FIXTURE - SYNTHETIC, NOT A REAL PUBLICATION. DOI/PMID ARE FAKE. ***
+Title: Clinical and laboratory features of dengue in adults and children at Hospital X, Country Y
+Journal: Journal of Test Medicine 2017. DOI: 10.0000/test.A001. PMID: 99000001
+Authors: A. Alpha, B. Beta, C. Gamma
+Design: prospective cohort. Study period: Jan 2015 - Dec 2016. Setting: Hospital X (tertiary), inpatients.
+Methods: Laboratory-confirmed dengue (NS1 or PCR). Cohort 1: adults (>=18 y), N=200. Cohort 2: children (<18 y), N=100.
+Thrombocytopenia was defined as platelet count <100 x10^9/L.
+
+Results
+Table 1. Demographics. Adults: median age 31 (IQR 24-42), 58% male. Children: median age 9 (IQR 6-12), 52% male.
+Table 2. Clinical and laboratory findings (day of admission, acute phase)
+Feature                      Adults (N=200)        Children (N=100)
+Fever                        198 (99.0%)           100 (100%)
+Myalgia                      150 (75.0%)           not recorded
+Rash                         approximately 30%     22 (22.0%)
+Thrombocytopenia (<100)      140 (70.0%)           45 (45.0%)
+ALT elevated (>40 U/L)       55 of 120 tested      not tested
+CRP, mg/L                    median 18 (IQR 8-40)  not reported
+Leukopenia                   "common"              "common"
+Text: Neck stiffness was not systematically recorded. Severe dengue occurred in 25 adults (12.5%).
+Treatment: all patients received supportive care with IV fluids. 12 adults with severe thrombocytopenia received corticosteroids; platelet recovery within 48 h (study-defined response) occurred in 8 of 12.

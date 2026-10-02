@@ -1,0 +1,5 @@
+{"skill_name":"ignota-evidence","evals":[
+ {"id":0,"name":"preflight-no-sources","prompt":"Gebruik de ignota-evidence skill voor INF_DENGUE en bouw de evidence-database. Er is geen internet en data/INF_DENGUE/raw/ is leeg.","expected_output":"Stopt na preflight; meldt dat er geen leesbare bron is; schrijft geen observations; verzint niets uit geheugen."},
+ {"id":1,"name":"extract-two-cohorts","prompt":"Gebruik de ignota-evidence skill voor INF_DENGUE. De enige bron staat in data/INF_DENGUE/raw/fixture_A.txt. Extraheer cohorten en observations en valideer.","expected_output":"2 aparte cohorten; juiste statussen (not_reported/not_assessed apart); CRP als median/IQR zonder mean; rash adults zonder n/N zonder verzonnen n; validate.py slaagt."},
+ {"id":2,"name":"overlap-and-no-pooling","prompt":"Gebruik de ignota-evidence skill voor INF_DENGUE. Bronnen: data/INF_DENGUE/raw/fixture_A.txt en fixture_B.txt. Extraheer, controleer cohort-overlap en maak de synthese voor trombocytopenie bij volwassenen.","expected_output":"Overlap tussen A-adults en B gemarkeerd; geen gepoolde schatting over beide als onafhankelijk; raw intact."}
+]}

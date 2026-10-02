@@ -1,0 +1,8 @@
+*** TEST FIXTURE - SYNTHETIC, NOT A REAL PUBLICATION. DOI/PMID ARE FAKE. ***
+Title: Platelet dynamics in adult dengue patients, Hospital X, Country Y
+Journal: Test Infectious Diseases Reports 2018. DOI: 10.0000/test.B002. PMID: 99000002
+Authors: A. Alpha, D. Delta, E. Epsilon
+Design: retrospective cohort. Study period: Mar 2015 - Nov 2016. Setting: Hospital X inpatients.
+Methods: Adults (>=18 y) with laboratory-confirmed dengue (NS1 or PCR), N=150.
+Thrombocytopenia: platelet count <100 x10^9/L.
+Results: Thrombocytopenia occurred in 98 of 150 patients (65.3%). Fever 148/150 (98.7%). Median nadir platelet count 62 x10^9/L (IQR 35-88) on illness day 6.
