@@ -27,6 +27,8 @@
       "Pouchot1991_62pts(not_extracted)",
       "Ohta1990_Japan(not_extracted)",
       "Efthimiou2006_review(not_extracted)"
-    ]
+    ],
+    "cohort_type": "review_container",
+    "cohort_role": "case"
   }
 ]

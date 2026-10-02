@@ -39,3 +39,25 @@ early | acute | acute_peak | hyperinflammatory | recovery | chronic | relapse | 
 
 ## Kwaliteit per studie/cohort
 design, directheid, representativiteit, sample size, risk-of-bias-indicatoren, extraction_confidence, overlap, volledigheid. Dit is beschrijvend; zet het niet om in een kans.
+
+## Tabellen en tekstlaag
+- `original_text` is de **letterlijke** rijtekst uit de bron (bijv. `Malar rash 311 (31.1) 264 (26.4) 144 (17.1)`); zet kolomkop/periode in `table_context` en `period`. Geen reconstructie als "Label: n (%) [periode]" in `original_text`.
+- Eén tabelrij met meerdere kolommen = meerdere observations met dezelfde `original_text`.
+- `pdftotext -layout` verknipt tabellen en tweekolomsartikelen. Lees lopende tekst uit `pdftotext` zonder `-layout`; render tabelpagina's met `pdftoppm -r 110 -png` en lees ze visueel (gebruik `extraction_confidence: high` alleen voor visueel geverifieerde cellen).
+- Paginanummering in `source_location`: `PDF p.N (printed p.M)`.
+
+## Raw versus normalized
+- raw: `feature_label_original` = bronterm (verplicht), `feature_id` optioneel.
+- normalized: `feature_id` = standaard-id met geldig prefix (verplicht), `feature_label_original` blijft staan.
+- Aantal observations in raw en normalized is gelijk (pariteitscheck).
+
+## Percentages en kwalitatieve bewoording
+- Bron geeft alleen een percentage: `percentage` gevuld, `positive_n`/`total_n` null, `derived: false`.
+- "about 40%", "up to 20%", "30-65%": `percentage_qualifier` (about | up_to | range) en `percentage_range` bij een bereik.
+- "negatief in 95%", "normaal in 88%": `finding_direction` (negative | normal), rapporteer 95, bereken geen 100-X.
+- "common", "rare": `status: present`, confidence low, geen getallen.
+- Afwijkende noemer (bijv. 68 overledenen): `denominator_description`.
+- Dezelfde waarde in twee eenheden (µmol/L en mg/dL): één observation, `unit` zoals de bron als eerste geeft, alternatief in `notes`.
+
+## Nieuwe domeinen
+`pathology` (HIST_), `diagnostic_accuracy` (CRIT_), `outcome` (OUT_: sterfte, overleving), complicaties (COMP_, domein clinical of outcome). Gebruik `at_diagnosis` voor `timing` als de bron alleen diagnosemomentdata geeft.

@@ -2,17 +2,173 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Cohort",
   "type": "object",
-  "required": ["study_id","cohort_id","disease_id","sample_size","possible_overlap"],
+  "required": [
+    "study_id",
+    "cohort_id",
+    "disease_id",
+    "sample_size",
+    "possible_overlap",
+    "cohort_type"
+  ],
   "properties": {
-    "study_id":{"type":"string"},"cohort_id":{"type":"string"},"disease_id":{"type":"string"},
-    "sample_size":{"type":["integer","null"]},
-    "age":{"type":["object","null"]},"sex":{"type":["object","null"]},
-    "country":{"type":["string","null"]},"ancestry_as_reported":{"type":["string","null"]},
-    "setting":{"type":["string","null"]},"severity":{"type":["string","null"]},
-    "diagnostic_definition":{"type":["string","null"]},
-    "inclusion_criteria":{"type":["string","null"]},"exclusion_criteria":{"type":["string","null"]},
-    "study_period":{"type":["string","null"]},"follow_up":{"type":["string","null"]},
-    "institution":{"type":["string","null"]},"registry":{"type":["string","null"]},
-    "possible_overlap":{"type":"boolean"},"overlap_with":{"type":"array","items":{"type":"string"}}
+    "study_id": {
+      "type": "string"
+    },
+    "cohort_id": {
+      "type": "string"
+    },
+    "disease_id": {
+      "type": "string"
+    },
+    "sample_size": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "age": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "sex": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "country": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ancestry_as_reported": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "setting": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "severity": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "diagnostic_definition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "inclusion_criteria": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exclusion_criteria": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "study_period": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "follow_up": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "institution": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "registry": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "possible_overlap": {
+      "type": "boolean"
+    },
+    "overlap_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cohort_type": {
+      "enum": [
+        "primary",
+        "period_subset",
+        "subgroup",
+        "review_container"
+      ],
+      "description": "period_subset = zelfde patiënten, andere kolom/periode (geen echte overlap); review_container = pseudo-cohort voor een review zonder eigen patiënten"
+    },
+    "parent_cohort_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cohort_role": {
+      "enum": [
+        "case",
+        "comparator",
+        "control"
+      ],
+      "description": "alleen case-cohorten leveren ziekte-evidence"
+    },
+    "duplicate_of": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "dezelfde studie in een andere publicatie; observations alleen bij het primaire record"
+    },
+    "overlap_type": {
+      "enum": [
+        "identical",
+        "subset",
+        "partial",
+        "unknown",
+        null
+      ]
+    },
+    "overlap_n": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "overlap_with_unextracted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
   }
 }

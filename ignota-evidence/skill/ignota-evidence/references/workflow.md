@@ -18,3 +18,20 @@ Vergelijk per paar publicaties: instelling, land, studieperiode, N, auteurs (ged
 
 ## Dashboard-velden
 Clinical/Laboratory/Imaging/Functional/Epidemiology/Time-course/Treatment coverage, aantal cohorten, totaal N (zonder overlap-dubbeltelling, overlap apart vermeld), primaire studies, reviews, evidence conflicts, potentiële overlaps.
+
+## Brontypen
+| source_type | cohort-regel | noemer | evidentieweging |
+|---|---|---|---|
+| primary_cohort, registry | echte cohorten, per cohort | n/N uit de bron | hoog |
+| review_citing_primary | één `review_container` (sample_size null) | alleen als in reviewtekst; nooit uit referentielijst | laag; `cited_source` alleen bij expliciete koppeling |
+| classification_study | case-cohort(en) van de doelziekte; comparator = `cohort_role: comparator`, niet extraheren | casegroep | middel; criteriaprestaties horen in `diagnostic_accuracy`, niet in clinical/lab |
+| guideline | geen cohort; alleen definities | n.v.t. | gebruik als context, niet als prevalentiebron |
+
+## Cohortstructuur
+- Kolommen voor periodes (1990-95, 1995-2000) van dezelfde patiënten: `cohort_type: period_subset`, `parent_cohort_id`, `possible_overlap: false` (structureel, geen echte overlap). Tel nooit op.
+- Overlap binnen één publicatie (subset): `overlap_type` (identical | subset | partial), `overlap_n`.
+- Cohorten die in de bron wel genoemd maar niet geëxtraheerd zijn: `overlap_with_unextracted`.
+- Dubbelpublicatie: `duplicate_of`, geen eigen observations.
+
+## Conflicten binnen één bron
+Tabelwaarde > tekstwaarde. Log de tekstwaarde in `audit/issues.md` en zet `conflicts_with` op de observation.

@@ -29,15 +29,23 @@ Voer de stappen in volgorde uit; details in `references/workflow.md`.
 5. **Normalisatie** – schrijf ook echt een normalized-laag (`data/<ID>/normalized/<domein>.jsonl`): feature-ids uit `references/features.md` (prefixen SYM_, SIGN_, LAB_, EPI_, TX_ ...), met behoud van `original_text`. Ontbreekt een id, bedenk er een volgens de prefixregel en noteer hem in `audit/issues.md` als voorstel voor features.md; gebruik geen vrije namen als `fever` of `crp`, want die zijn later niet te koppelen.
 6. **Overlapcontrole** – zie `references/workflow.md` §Overlap. Markeer `possible_overlap`/`overlap_with`; tel nooit dubbel.
 7. **Synthese** – alleen als gerechtvaardigd; `references/synthesis.md`. Schrijf naar `synthesized/`; raw blijft onaangeroerd.
-8. **Validatie** – `python3 scripts/validate.py data/<ID>`. Los alle fouten op of documenteer ze in `audit/issues.md`.
+8. **Validatie** – `python3 scripts/validate.py data/<ID>` (schema's, cohorten, verwijzingen, raw/normalized-pariteit) én `python3 scripts/check_quotes.py data/<ID>` (staat `original_text` echt in de bron-PDF; `MISSING` = nakijken). Los alle fouten op of documenteer ze in `audit/issues.md`. Zet daarna in `diseases/disease_master.json` de `status` van de ziekte op `extracted` (alleen dat veld).
 9. **Dashboard** – `data/<ID>/audit/dashboard.md`: coverage per domein, aantal cohorten, patiënten, studies, conflicten, overlap. Coverage = aandeel domeinen/features met ≥1 geëxtraheerde observation, geen kwaliteitsoordeel.
 10. **Rapportage** – korte samenvatting aan de gebruiker: wat gevonden, wat ontbreekt, wat onzeker, welke bronnen alleen abstract.
+
+## Eerst: wat voor bron is dit?
+
+Bepaal bij triage het `source_type` (zie `references/workflow.md` §Brontypen); het bepaalt wat je extraheert:
+- **primary_cohort / registry**: normale route, per cohort observations met n/N.
+- **review_citing_primary**: geen eigen patiënten. Eén `review_container`-cohort, `confidence` laag/medium, `total_n` alleen als het in de reviewtekst zelf staat (niet uit de referentielijst), `cited_source` alleen als de tekst de bewering aan een citaat koppelt. Nooit `not_reported`-records.
+- **classification_study / guideline**: alleen casekarakteristieken van de doelziekte; geen comparatoren, geen sens/spec/gewichten als observation (tenzij domein `diagnostic_accuracy`).
+- **dubbelpublicatie** (zelfde studie, ander tijdschrift): observations één keer, bij de meest volledige publicatie; de andere krijgt alleen triage en een cohortrecord met `duplicate_of`.
 
 ## Niet-onderhandelbaar
 
 - `not_reported` is niet `absent`. Statussen: present | absent | not_reported | not_assessed | unclear.
 - Geen berekende gemiddelden/SD's/percentages die de bron niet geeft (percentage uit n/N in de bron mag, met `derived: true`).
-- Elke observation: PMID of DOI, `study_id`, `cohort_id`, `source_location`, `original_text`.
+- Elke observation: DOI en/of PMID (DOI volstaat; PMID alleen als het in de bron staat, anders `null`), `study_id`, `cohort_id`, `source_location`, `original_text`.
 - Therapierespons is geen diagnostisch bewijs. Kwaliteitsbeoordeling wordt nooit omgezet in een probabiliteit.
 - Conflicterende studies niet middelen of kiezen; stratificeer en rapporteer heterogeniteit.
 - Twijfel over een extractie: `extraction_confidence: low` plus notitie in audit, niet gokken. Kritieke extracties (N, hoofdprevalenties) laat je door de gebruiker steekproefsgewijs controleren.
@@ -53,4 +61,4 @@ data/<ID>/audit/      triage.jsonl, issues.md, dashboard.md, overlap.md
 
 ## Eerste gebruik (pilot)
 
-De pilot is 10 ziekten (zie `diseases/disease_master.json`). Begin met één ziekte, review samen met de gebruiker de eerste ~20 observations op schema, definities en bronlocaties, en pas pas daarna door naar de rest. Leg bevindingen over schema/prompt vast in `audit/pilot_notes.md`.
+De pilot is 10 ziekten (zie `diseases/disease_master.json`). Begin met één ziekte, review samen met de gebruiker de eerste ~20 observations op schema, definities en bronlocaties, en pas pas daarna door naar de rest. Leg bevindingen over schema/prompt vast in `audit/skill_feedback.md` (één bestand: wat onduidelijk was, wat je zelf moest bedenken, voorstellen). `audit/issues.md` is voor data-issues (conflicten, onzekere extracties, nieuwe feature-ids).

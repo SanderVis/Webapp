@@ -1,116 +1,130 @@
 [
- {
-  "study_id": "SUPPIAH2022_ARD",
-  "cohort_id": "SUPPIAH2022_ARD_C1",
-  "disease_id": "VAS_MPA",
-  "sample_size": 291,
-  "age": {
-   "mean": 65.5,
-   "sd": 13.2,
-   "unit": "years"
+  {
+    "study_id": "SUPPIAH2022_ARD",
+    "cohort_id": "SUPPIAH2022_ARD_C1",
+    "disease_id": "VAS_MPA",
+    "sample_size": 291,
+    "age": {
+      "mean": 65.5,
+      "sd": 13.2,
+      "unit": "years"
+    },
+    "sex": {
+      "female_n": 164,
+      "total_n": 291,
+      "female_pct": 56.4
+    },
+    "country": "International: DCVAS recruited from 136 sites in 32 countries (MPA-specific country distribution not reported in main text; most patients from Europe, Asia and North America)",
+    "ancestry_as_reported": null,
+    "setting": "Academic and community practices; majority academic rheumatology or nephrology units (referral bias acknowledged)",
+    "severity": null,
+    "diagnostic_definition": "Reference diagnosis of MPA after expert panel review (55 experts; only cases agreed on with at least moderate certainty retained): 269 of 404 cases retained the submitting physician diagnosis of MPA plus 22 reclassified as MPA by consensus of two expert reviewers. Classification study; comparators (n=822) excluded from this cohort.",
+    "inclusion_criteria": "DCVAS: age >=18 years, diagnosis of vasculitis or vasculitis mimic; AAV only enrolled within 2 years of diagnosis; consecutive patients; only data present at diagnosis recorded. Cohort = MPA cases used in the stage-5 analysis (development n=149 + validation n=142).",
+    "exclusion_criteria": "135 submitted MPA cases that did not pass expert review were excluded.",
+    "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
+    "follow_up": "None (data at diagnosis)",
+    "institution": "DCVAS multicentre consortium (136 sites)",
+    "registry": "DCVAS (Diagnostic and Classification Criteria in Vasculitis) prospective observational study",
+    "possible_overlap": true,
+    "overlap_with": [
+      "SUPPIAH2022_ARD_C2",
+      "SUPPIAH2022_AR_C1"
+    ],
+    "notes": "Table 1 reports the combined development+validation MPA cases (n=291); no feature data per development/validation set in the main text. Denominator of features = 291 unless stated.",
+    "cohort_role": "case",
+    "cohort_type": "primary",
+    "overlap_type": "partial",
+    "overlap_n": 269
   },
-  "sex": {
-   "female_n": 164,
-   "total_n": 291,
-   "female_pct": 56.4
+  {
+    "study_id": "SUPPIAH2022_ARD",
+    "cohort_id": "SUPPIAH2022_ARD_C2",
+    "disease_id": "VAS_MPA",
+    "sample_size": 404,
+    "age": null,
+    "sex": null,
+    "country": "International (DCVAS)",
+    "ancestry_as_reported": null,
+    "setting": "DCVAS, see C1",
+    "severity": null,
+    "diagnostic_definition": "Submitting-physician diagnosis of MPA, before expert panel review (sensitivity analysis population: n=404 MPA cases and 2467 randomly selected comparators among 2871 DCVAS patients). Less well defined than C1.",
+    "inclusion_criteria": "All DCVAS cases submitted with a diagnosis of MPA by the physician",
+    "exclusion_criteria": null,
+    "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
+    "follow_up": null,
+    "institution": "DCVAS multicentre consortium",
+    "registry": "DCVAS",
+    "possible_overlap": true,
+    "overlap_with": [
+      "SUPPIAH2022_ARD_C1",
+      "SUPPIAH2022_AR_C2"
+    ],
+    "notes": "269 of these 404 are part of C1 (291). Not independent of C1. Only one value extracted (pANCA/MPO-ANCA 91%).",
+    "cohort_role": "case",
+    "cohort_type": "primary",
+    "overlap_type": "partial",
+    "overlap_n": 269
   },
-  "country": "International: DCVAS recruited from 136 sites in 32 countries (MPA-specific country distribution not reported in main text; most patients from Europe, Asia and North America)",
-  "ancestry_as_reported": null,
-  "setting": "Academic and community practices; majority academic rheumatology or nephrology units (referral bias acknowledged)",
-  "severity": null,
-  "diagnostic_definition": "Reference diagnosis of MPA after expert panel review (55 experts; only cases agreed on with at least moderate certainty retained): 269 of 404 cases retained the submitting physician diagnosis of MPA plus 22 reclassified as MPA by consensus of two expert reviewers. Classification study; comparators (n=822) excluded from this cohort.",
-  "inclusion_criteria": "DCVAS: age >=18 years, diagnosis of vasculitis or vasculitis mimic; AAV only enrolled within 2 years of diagnosis; consecutive patients; only data present at diagnosis recorded. Cohort = MPA cases used in the stage-5 analysis (development n=149 + validation n=142).",
-  "exclusion_criteria": "135 submitted MPA cases that did not pass expert review were excluded.",
-  "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
-  "follow_up": "None (data at diagnosis)",
-  "institution": "DCVAS multicentre consortium (136 sites)",
-  "registry": "DCVAS (Diagnostic and Classification Criteria in Vasculitis) prospective observational study",
-  "possible_overlap": true,
-  "overlap_with": [
-   "SUPPIAH2022_ARD_C2",
-   "SUPPIAH2022_AR_C1"
-  ],
-  "notes": "Table 1 reports the combined development+validation MPA cases (n=291); no feature data per development/validation set in the main text. Denominator of features = 291 unless stated."
- },
- {
-  "study_id": "SUPPIAH2022_ARD",
-  "cohort_id": "SUPPIAH2022_ARD_C2",
-  "disease_id": "VAS_MPA",
-  "sample_size": 404,
-  "age": null,
-  "sex": null,
-  "country": "International (DCVAS)",
-  "ancestry_as_reported": null,
-  "setting": "DCVAS, see C1",
-  "severity": null,
-  "diagnostic_definition": "Submitting-physician diagnosis of MPA, before expert panel review (sensitivity analysis population: n=404 MPA cases and 2467 randomly selected comparators among 2871 DCVAS patients). Less well defined than C1.",
-  "inclusion_criteria": "All DCVAS cases submitted with a diagnosis of MPA by the physician",
-  "exclusion_criteria": null,
-  "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
-  "follow_up": null,
-  "institution": "DCVAS multicentre consortium",
-  "registry": "DCVAS",
-  "possible_overlap": true,
-  "overlap_with": [
-   "SUPPIAH2022_ARD_C1",
-   "SUPPIAH2022_AR_C2"
-  ],
-  "notes": "269 of these 404 are part of C1 (291). Not independent of C1. Only one value extracted (pANCA/MPO-ANCA 91%)."
- },
- {
-  "study_id": "SUPPIAH2022_AR",
-  "cohort_id": "SUPPIAH2022_AR_C1",
-  "disease_id": "VAS_MPA",
-  "sample_size": 291,
-  "age": {
-   "mean": 65.5,
-   "sd": 13.2,
-   "unit": "years"
+  {
+    "study_id": "SUPPIAH2022_AR",
+    "cohort_id": "SUPPIAH2022_AR_C1",
+    "disease_id": "VAS_MPA",
+    "sample_size": 291,
+    "age": {
+      "mean": 65.5,
+      "sd": 13.2,
+      "unit": "years"
+    },
+    "sex": {
+      "female_n": 164,
+      "total_n": 291,
+      "female_pct": 56.4
+    },
+    "country": "International (DCVAS)",
+    "ancestry_as_reported": null,
+    "setting": "Identical to SUPPIAH2022_ARD_C1",
+    "severity": null,
+    "diagnostic_definition": "Identical to SUPPIAH2022_ARD_C1 (same study published simultaneously in Arthritis & Rheumatology)",
+    "inclusion_criteria": null,
+    "exclusion_criteria": null,
+    "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
+    "follow_up": null,
+    "institution": "DCVAS multicentre consortium",
+    "registry": "DCVAS",
+    "possible_overlap": true,
+    "overlap_with": [
+      "SUPPIAH2022_ARD_C1"
+    ],
+    "notes": "Duplicate publication of the same patients. No observations extracted from this publication to avoid double counting; numbers were checked as identical to the ARD version.",
+    "cohort_role": "case",
+    "cohort_type": "primary",
+    "duplicate_of": "SUPPIAH2022_ARD_C1"
   },
-  "sex": {
-   "female_n": 164,
-   "total_n": 291,
-   "female_pct": 56.4
-  },
-  "country": "International (DCVAS)",
-  "ancestry_as_reported": null,
-  "setting": "Identical to SUPPIAH2022_ARD_C1",
-  "severity": null,
-  "diagnostic_definition": "Identical to SUPPIAH2022_ARD_C1 (same study published simultaneously in Arthritis & Rheumatology)",
-  "inclusion_criteria": null,
-  "exclusion_criteria": null,
-  "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
-  "follow_up": null,
-  "institution": "DCVAS multicentre consortium",
-  "registry": "DCVAS",
-  "possible_overlap": true,
-  "overlap_with": [
-   "SUPPIAH2022_ARD_C1"
-  ],
-  "notes": "Duplicate publication of the same patients. No observations extracted from this publication to avoid double counting; numbers were checked as identical to the ARD version."
- },
- {
-  "study_id": "SUPPIAH2022_AR",
-  "cohort_id": "SUPPIAH2022_AR_C2",
-  "disease_id": "VAS_MPA",
-  "sample_size": 404,
-  "age": null,
-  "sex": null,
-  "country": "International (DCVAS)",
-  "ancestry_as_reported": null,
-  "setting": "Identical to SUPPIAH2022_ARD_C2",
-  "severity": null,
-  "diagnostic_definition": "Identical to SUPPIAH2022_ARD_C2",
-  "inclusion_criteria": null,
-  "exclusion_criteria": null,
-  "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
-  "follow_up": null,
-  "institution": "DCVAS multicentre consortium",
-  "registry": "DCVAS",
-  "possible_overlap": true,
-  "overlap_with": [
-   "SUPPIAH2022_ARD_C2"
-  ],
-  "notes": "Duplicate publication of SUPPIAH2022_ARD_C2; no observations extracted."
- }
+  {
+    "study_id": "SUPPIAH2022_AR",
+    "cohort_id": "SUPPIAH2022_AR_C2",
+    "disease_id": "VAS_MPA",
+    "sample_size": 404,
+    "age": null,
+    "sex": null,
+    "country": "International (DCVAS)",
+    "ancestry_as_reported": null,
+    "setting": "Identical to SUPPIAH2022_ARD_C2",
+    "severity": null,
+    "diagnostic_definition": "Identical to SUPPIAH2022_ARD_C2",
+    "inclusion_criteria": null,
+    "exclusion_criteria": null,
+    "study_period": "January 2011 - December 2017 (DCVAS recruitment)",
+    "follow_up": null,
+    "institution": "DCVAS multicentre consortium",
+    "registry": "DCVAS",
+    "possible_overlap": true,
+    "overlap_with": [
+      "SUPPIAH2022_ARD_C2"
+    ],
+    "notes": "Duplicate publication of SUPPIAH2022_ARD_C2; no observations extracted.",
+    "cohort_role": "case",
+    "cohort_type": "primary",
+    "duplicate_of": "SUPPIAH2022_ARD_C2"
+  }
 ]

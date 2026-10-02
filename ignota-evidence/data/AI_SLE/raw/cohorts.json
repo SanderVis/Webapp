@@ -1,99 +1,103 @@
 [
- {
-  "study_id": "Cervera2003_EuroLupus",
-  "disease_id": "AI_SLE",
-  "age": {
-   "mean": 37,
-   "sd": 14,
-   "min": 12,
-   "max": 82,
-   "timepoint": "entry into prospective study"
+  {
+    "study_id": "Cervera2003_EuroLupus",
+    "disease_id": "AI_SLE",
+    "age": {
+      "mean": 37,
+      "sd": 14,
+      "min": 12,
+      "max": 82,
+      "timepoint": "entry into prospective study"
+    },
+    "sex": {
+      "female_n": 908,
+      "male_n": 92,
+      "total": 1000
+    },
+    "country": "Spain 350, Italy 250, UK 248, Poland 50, Turkey 50, Norway 37, Belgium 15 (7 European countries, 12 tertiary university centres)",
+    "ancestry_as_reported": "971 white (97.1%), 19 black (1.9%), 10 other races (1%)",
+    "setting": "Tertiary referral university centres, outpatient follow-up at least every 3-6 months, hospitalisation if necessary",
+    "severity": null,
+    "diagnostic_definition": "1982 revised ACR classification criteria for SLE",
+    "inclusion_criteria": "Unselected consecutive patients with well-defined SLE meeting the 1982 revised ACR criteria; prospective, multicenter ('Euro-Lupus' Project)",
+    "exclusion_criteria": null,
+    "institution": "12 tertiary referral university centres (Barcelona, London, Madrid, Malaga x2, Ankara, Warsaw, Rome, Bergen, Cagliari, Brussels; per Methods)",
+    "registry": "European Working Party on SLE / Euro-Lupus Project",
+    "cohort_id": "Cervera2003_EuroLupus_C1",
+    "sample_size": 1000,
+    "study_period": "1990-2000 (10-year prospective follow-up)",
+    "follow_up": "10 years; 195 (19.5%) lost to follow-up; observation stopped at last information if lost, or at death",
+    "possible_overlap": false,
+    "overlap_with": [],
+    "cohort_type": "primary",
+    "cohort_role": "case"
   },
-  "sex": {
-   "female_n": 908,
-   "male_n": 92,
-   "total": 1000
+  {
+    "study_id": "Cervera2003_EuroLupus",
+    "disease_id": "AI_SLE",
+    "age": {
+      "mean": 37,
+      "sd": 14,
+      "min": 12,
+      "max": 82,
+      "timepoint": "entry into prospective study"
+    },
+    "sex": {
+      "female_n": 908,
+      "male_n": 92,
+      "total": 1000
+    },
+    "country": "Spain 350, Italy 250, UK 248, Poland 50, Turkey 50, Norway 37, Belgium 15 (7 European countries, 12 tertiary university centres)",
+    "ancestry_as_reported": "971 white (97.1%), 19 black (1.9%), 10 other races (1%)",
+    "setting": "Tertiary referral university centres, outpatient follow-up at least every 3-6 months, hospitalisation if necessary",
+    "severity": null,
+    "diagnostic_definition": "1982 revised ACR classification criteria for SLE",
+    "inclusion_criteria": "Unselected consecutive patients with well-defined SLE meeting the 1982 revised ACR criteria; prospective, multicenter ('Euro-Lupus' Project)",
+    "exclusion_criteria": null,
+    "institution": "12 tertiary referral university centres (Barcelona, London, Madrid, Malaga x2, Ankara, Warsaw, Rome, Bergen, Cagliari, Brussels; per Methods)",
+    "registry": "European Working Party on SLE / Euro-Lupus Project",
+    "cohort_id": "Cervera2003_EuroLupus_C1_P1",
+    "sample_size": 1000,
+    "study_period": "1990-1995 (first 5 years of the same prospective study)",
+    "follow_up": "5 years",
+    "possible_overlap": false,
+    "overlap_with": [],
+    "cohort_type": "period_subset",
+    "parent_cohort_id": "Cervera2003_EuroLupus_C1",
+    "cohort_role": "case"
   },
-  "country": "Spain 350, Italy 250, UK 248, Poland 50, Turkey 50, Norway 37, Belgium 15 (7 European countries, 12 tertiary university centres)",
-  "ancestry_as_reported": "971 white (97.1%), 19 black (1.9%), 10 other races (1%)",
-  "setting": "Tertiary referral university centres, outpatient follow-up at least every 3-6 months, hospitalisation if necessary",
-  "severity": null,
-  "diagnostic_definition": "1982 revised ACR classification criteria for SLE",
-  "inclusion_criteria": "Unselected consecutive patients with well-defined SLE meeting the 1982 revised ACR criteria; prospective, multicenter ('Euro-Lupus' Project)",
-  "exclusion_criteria": null,
-  "institution": "12 tertiary referral university centres (Barcelona, London, Madrid, Malaga x2, Ankara, Warsaw, Rome, Bergen, Cagliari, Brussels; per Methods)",
-  "registry": "European Working Party on SLE / Euro-Lupus Project",
-  "cohort_id": "Cervera2003_EuroLupus_C1",
-  "sample_size": 1000,
-  "study_period": "1990-2000 (10-year prospective follow-up)",
-  "follow_up": "10 years; 195 (19.5%) lost to follow-up; observation stopped at last information if lost, or at death",
-  "possible_overlap": false,
-  "overlap_with": []
- },
- {
-  "study_id": "Cervera2003_EuroLupus",
-  "disease_id": "AI_SLE",
-  "age": {
-   "mean": 37,
-   "sd": 14,
-   "min": 12,
-   "max": 82,
-   "timepoint": "entry into prospective study"
-  },
-  "sex": {
-   "female_n": 908,
-   "male_n": 92,
-   "total": 1000
-  },
-  "country": "Spain 350, Italy 250, UK 248, Poland 50, Turkey 50, Norway 37, Belgium 15 (7 European countries, 12 tertiary university centres)",
-  "ancestry_as_reported": "971 white (97.1%), 19 black (1.9%), 10 other races (1%)",
-  "setting": "Tertiary referral university centres, outpatient follow-up at least every 3-6 months, hospitalisation if necessary",
-  "severity": null,
-  "diagnostic_definition": "1982 revised ACR classification criteria for SLE",
-  "inclusion_criteria": "Unselected consecutive patients with well-defined SLE meeting the 1982 revised ACR criteria; prospective, multicenter ('Euro-Lupus' Project)",
-  "exclusion_criteria": null,
-  "institution": "12 tertiary referral university centres (Barcelona, London, Madrid, Malaga x2, Ankara, Warsaw, Rome, Bergen, Cagliari, Brussels; per Methods)",
-  "registry": "European Working Party on SLE / Euro-Lupus Project",
-  "cohort_id": "Cervera2003_EuroLupus_C1_P1",
-  "sample_size": 1000,
-  "study_period": "1990-1995 (first 5 years of the same prospective study)",
-  "follow_up": "5 years",
-  "possible_overlap": true,
-  "overlap_with": [
-   "Cervera2003_EuroLupus_C1"
-  ]
- },
- {
-  "study_id": "Cervera2003_EuroLupus",
-  "disease_id": "AI_SLE",
-  "age": {
-   "mean": 37,
-   "sd": 14,
-   "min": 12,
-   "max": 82,
-   "timepoint": "entry into prospective study"
-  },
-  "sex": {
-   "female_n": 908,
-   "male_n": 92,
-   "total": 1000
-  },
-  "country": "Spain 350, Italy 250, UK 248, Poland 50, Turkey 50, Norway 37, Belgium 15 (7 European countries, 12 tertiary university centres)",
-  "ancestry_as_reported": "971 white (97.1%), 19 black (1.9%), 10 other races (1%)",
-  "setting": "Tertiary referral university centres, outpatient follow-up at least every 3-6 months, hospitalisation if necessary",
-  "severity": null,
-  "diagnostic_definition": "1982 revised ACR classification criteria for SLE",
-  "inclusion_criteria": "Unselected consecutive patients with well-defined SLE meeting the 1982 revised ACR criteria; prospective, multicenter ('Euro-Lupus' Project)",
-  "exclusion_criteria": null,
-  "institution": "12 tertiary referral university centres (Barcelona, London, Madrid, Malaga x2, Ankara, Warsaw, Rome, Bergen, Cagliari, Brussels; per Methods)",
-  "registry": "European Working Party on SLE / Euro-Lupus Project",
-  "cohort_id": "Cervera2003_EuroLupus_C1_P2",
-  "sample_size": 840,
-  "study_period": "1995-2000 (last 5 years of the same prospective study)",
-  "follow_up": "5 years; n = number of patients that continued in the study in 1995 (Table footnote)",
-  "possible_overlap": true,
-  "overlap_with": [
-   "Cervera2003_EuroLupus_C1"
-  ]
- }
+  {
+    "study_id": "Cervera2003_EuroLupus",
+    "disease_id": "AI_SLE",
+    "age": {
+      "mean": 37,
+      "sd": 14,
+      "min": 12,
+      "max": 82,
+      "timepoint": "entry into prospective study"
+    },
+    "sex": {
+      "female_n": 908,
+      "male_n": 92,
+      "total": 1000
+    },
+    "country": "Spain 350, Italy 250, UK 248, Poland 50, Turkey 50, Norway 37, Belgium 15 (7 European countries, 12 tertiary university centres)",
+    "ancestry_as_reported": "971 white (97.1%), 19 black (1.9%), 10 other races (1%)",
+    "setting": "Tertiary referral university centres, outpatient follow-up at least every 3-6 months, hospitalisation if necessary",
+    "severity": null,
+    "diagnostic_definition": "1982 revised ACR classification criteria for SLE",
+    "inclusion_criteria": "Unselected consecutive patients with well-defined SLE meeting the 1982 revised ACR criteria; prospective, multicenter ('Euro-Lupus' Project)",
+    "exclusion_criteria": null,
+    "institution": "12 tertiary referral university centres (Barcelona, London, Madrid, Malaga x2, Ankara, Warsaw, Rome, Bergen, Cagliari, Brussels; per Methods)",
+    "registry": "European Working Party on SLE / Euro-Lupus Project",
+    "cohort_id": "Cervera2003_EuroLupus_C1_P2",
+    "sample_size": 840,
+    "study_period": "1995-2000 (last 5 years of the same prospective study)",
+    "follow_up": "5 years; n = number of patients that continued in the study in 1995 (Table footnote)",
+    "possible_overlap": false,
+    "overlap_with": [],
+    "cohort_type": "period_subset",
+    "parent_cohort_id": "Cervera2003_EuroLupus_C1",
+    "cohort_role": "case"
+  }
 ]
