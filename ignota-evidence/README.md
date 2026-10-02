@@ -6,6 +6,7 @@ Uitvoering van de Master Briefing v1.0 (2 okt 2026). Doel: cohort-gebaseerde, br
 - `RULES.md` – harde regels (niet verzinnen, not_reported != absent, geen reconstructie, ...)
 - `diseases/disease_master.json` – 10 pilotziekten
 - `schemas/` – JSON-schema's voor observations en cohorten
+- `skill/ignota-evidence/` – de skill (SKILL.md + references)
 - `scripts/queries.py <DISEASE_ID>` – zoekopdrachten (briefing sectie 14)
 - `scripts/validate.py data/<DISEASE_ID>` – n/N-, percentage-, provenance- en duplicaatcontrole
 - `data/<DISEASE_ID>/{raw,normalized,synthesized,audit}/` – drie evidence-lagen + audit
