@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cohort",
+  "type": "object",
+  "required": ["study_id","cohort_id","disease_id","sample_size","possible_overlap"],
+  "properties": {
+    "study_id":{"type":"string"},"cohort_id":{"type":"string"},"disease_id":{"type":"string"},
+    "sample_size":{"type":["integer","null"]},
+    "age":{"type":["object","null"]},"sex":{"type":["object","null"]},
+    "country":{"type":["string","null"]},"ancestry_as_reported":{"type":["string","null"]},
+    "setting":{"type":["string","null"]},"severity":{"type":["string","null"]},
+    "diagnostic_definition":{"type":["string","null"]},
+    "inclusion_criteria":{"type":["string","null"]},"exclusion_criteria":{"type":["string","null"]},
+    "study_period":{"type":["string","null"]},"follow_up":{"type":["string","null"]},
+    "institution":{"type":["string","null"]},"registry":{"type":["string","null"]},
+    "possible_overlap":{"type":"boolean"},"overlap_with":{"type":"array","items":{"type":"string"}}
+  }
+}

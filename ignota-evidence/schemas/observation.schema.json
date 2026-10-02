@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observation (raw layer)",
+  "type": "object",
+  "required": ["disease_id","feature_id","study_id","cohort_id","status","source_location","evidence_access","extraction_confidence","original_text"],
+  "properties": {
+    "disease_id": {"type":"string"},
+    "feature_id": {"type":"string"},
+    "domain": {"enum":["clinical","laboratory","imaging","functional","microbiology","epidemiology","treatment"]},
+    "study_id": {"type":"string"},
+    "cohort_id": {"type":"string"},
+    "pmid": {"type":["string","null"]},
+    "doi": {"type":["string","null"]},
+    "status": {"enum":["present","absent","not_reported","not_assessed","unclear"]},
+    "positive_n": {"type":["integer","null"],"minimum":0},
+    "total_n": {"type":["integer","null"],"minimum":0},
+    "percentage": {"type":["number","null"],"minimum":0,"maximum":100},
+    "derived": {"type":"boolean","description":"true = percentage berekend uit n/N die in de bron staan"},
+    "unit": {"type":["string","null"]},
+    "stat": {"type":["object","null"],"description":"originele vorm: mean/sd/median/q1/q3/min/max/n","additionalProperties":true},
+    "reference_range": {"type":["string","null"]},
+    "cutoff": {"type":["string","null"]},
+    "definition": {"type":["string","null"]},
+    "timing": {"enum":["early","acute","acute_peak","hyperinflammatory","recovery","chronic","relapse","unspecified"]},
+    "severity": {"type":["string","null"]},
+    "source_location": {"type":"string","description":"bijv. Table 2, Results par. 3"},
+    "original_text": {"type":"string","description":"letterlijke bronformulering"},
+    "evidence_access": {"enum":["full_text","abstract_only"]},
+    "publication_year": {"type":["integer","null"]},
+    "study_design": {"type":["string","null"]},
+    "extraction_confidence": {"enum":["high","medium","low"]}
+  }
+}

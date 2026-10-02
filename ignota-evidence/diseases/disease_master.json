@@ -1,0 +1,128 @@
+[
+  {
+    "disease_id": "INF_DENGUE",
+    "name": "Dengue",
+    "category": "infectious",
+    "cluster": "arbovirus",
+    "synonyms": [
+      "dengue fever",
+      "breakbone fever"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending",
+    "pathogen": "Dengue virus"
+  },
+  {
+    "disease_id": "INF_LYME",
+    "name": "Lyme borreliosis",
+    "category": "infectious",
+    "cluster": "tick_borne",
+    "synonyms": [
+      "Lyme disease",
+      "Lyme borreliosis"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending",
+    "pathogen": "Borrelia burgdorferi sensu lato"
+  },
+  {
+    "disease_id": "INF_INVASIVE_CANDIDIASIS",
+    "name": "Invasieve candidiasis",
+    "category": "infectious",
+    "cluster": "invasive_fungal",
+    "synonyms": [
+      "candidemia",
+      "invasive candidiasis"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending",
+    "pathogen": "Candida spp."
+  },
+  {
+    "disease_id": "INF_TB",
+    "name": "Tuberculose",
+    "category": "infectious",
+    "cluster": "mycobacterial",
+    "synonyms": [
+      "tuberculosis",
+      "TB"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending",
+    "pathogen": "Mycobacterium tuberculosis complex"
+  },
+  {
+    "disease_id": "INF_INFLUENZA",
+    "name": "Influenza",
+    "category": "infectious",
+    "cluster": "respiratory_virus",
+    "synonyms": [
+      "flu",
+      "seasonal influenza"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending",
+    "pathogen": "Influenza A/B virus"
+  },
+  {
+    "disease_id": "VAS_GPA",
+    "name": "Granulomatosis with polyangiitis",
+    "category": "vasculitis",
+    "cluster": "anca_associated_vasculitis",
+    "synonyms": [
+      "Wegener granulomatosis",
+      "GPA"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending"
+  },
+  {
+    "disease_id": "AI_SLE",
+    "name": "Systemische lupus erythematosus",
+    "category": "autoimmune",
+    "cluster": "systemic_connective_tissue",
+    "synonyms": [
+      "SLE",
+      "systemic lupus erythematosus",
+      "lupus"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending"
+  },
+  {
+    "disease_id": "AINF_FMF",
+    "name": "Familial Mediterranean fever",
+    "category": "autoinflammatory",
+    "cluster": "inflammasomopathy",
+    "synonyms": [
+      "FMF"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending",
+    "gene": "MEFV"
+  },
+  {
+    "disease_id": "AINF_SAVI",
+    "name": "STING-associated vasculopathy with onset in infancy",
+    "category": "autoinflammatory",
+    "cluster": "interferonopathy",
+    "synonyms": [
+      "SAVI"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending",
+    "gene": "STING1 (TMEM173)"
+  },
+  {
+    "disease_id": "AINF_AOSD",
+    "name": "Adult-onset Still disease",
+    "category": "autoinflammatory",
+    "cluster": "still_spectrum",
+    "synonyms": [
+      "AOSD",
+      "adult onset Still's disease"
+    ],
+    "subtypes": [],
+    "status": "pilot_pending"
+  }
+]
