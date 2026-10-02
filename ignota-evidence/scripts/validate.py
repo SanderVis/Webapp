@@ -10,7 +10,9 @@ schema = json.load(open(root/"schemas/observation.schema.json"))
 errs = 0
 def err(f, i, m):
     global errs; errs += 1; print(f"{f}:{i}: {m}")
-for f in pathlib.Path(sys.argv[1]).rglob("*.jsonl"):
+base = pathlib.Path(sys.argv[1])
+files = [f for sub in ("raw", "normalized") for f in (base/sub).rglob("*.jsonl")]  # triage/audit/synthesized hebben ander schema
+for f in files:
     seen = set()
     for i, line in enumerate(open(f), 1):
         if not line.strip(): continue

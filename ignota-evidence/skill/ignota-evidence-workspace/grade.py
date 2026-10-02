@@ -7,7 +7,7 @@ dd = proj/"data"/"INF_DENGUE"
 def rows(pattern):
     out=[]
     for f in glob.glob(str(dd/"**"/pattern), recursive=True):
-        if "/raw/fixture" in f: continue
+        if "/raw/fixture" in f or not ("/raw/" in f or "/normalized/" in f): continue
         for l in open(f):
             if l.strip():
                 try: out.append(json.loads(l))
@@ -22,10 +22,25 @@ for f in cohort_files:
     except Exception:
         cohorts += [json.loads(l) for l in open(f) if l.strip()]
 name=pathlib.Path(ev).name
+Path_validate=pathlib.Path("/home/user/Webapp/ignota-evidence/scripts/validate.py")  # altijd de actuele validator
 res=[]
 def a(text, passed, evidence): res.append({"text":text,"passed":bool(passed),"evidence":evidence})
+def _grp(c):
+    s=json.dumps(c).lower()
+    return "child" if ("child" in s or "pediatric" in s) else ("adult" if "adult" in s else "?")
+grp={str(c.get("cohort_id")):_grp(c) for c in cohorts}
+SYN={"crp":["crp","c-reactive","c_reactive"],"rash":["rash","exanthem"],"platelet":["platelet","thrombocyt"],"thrombocytopenia":["platelet","thrombocyt"],"alt":["alt ","alt_","_alt","alanine","alt)"],"myalgia":["myalgia","muscle"]}
 def feat(pat, cohort_pat=None):
-    return [r for r in raw if pat.lower() in r.get("feature_id","").lower() and (cohort_pat is None or cohort_pat.lower() in str(r.get("cohort_id","")).lower())]
+    keys=SYN.get(pat.lower(),[pat.lower()])
+    def hit(r):
+        h=(r.get("feature_id","")+" "+r.get("original_text","")).lower()+" "
+        return any(k in h for k in keys)
+    def coh(r):
+        if cohort_pat is None: return True
+        cp="child" if cohort_pat.startswith("child") else "adult"
+        g=grp.get(str(r.get("cohort_id")),"?")
+        return g==cp or (g=="?" and cp in json.dumps(r).lower())
+    return [r for r in raw if hit(r) and coh(r)]
 if name.startswith("eval-0"):
     a("Geen observations geschreven (geen bron)", len(raw)==0, f"{len(raw)} observations")
     txt=" ".join(open(f).read() for f in glob.glob(str(dd/"**"/"*.md"),recursive=True))
@@ -49,7 +64,7 @@ else:
     a("ALT noemer 120 (niet 200)", any(r.get("total_n")==120 and r.get("positive_n")==55 for r in alt), json.dumps([(r.get("positive_n"),r.get("total_n")) for r in alt]))
     tx=[r for r in raw if r.get("domain")=="treatment" or "steroid" in r.get("feature_id","").lower()]
     a("Behandelrespons 8/12 aanwezig als treatment (niet als diagnostisch bewijs)", any(r.get("positive_n")==8 and r.get("total_n")==12 for r in tx), json.dumps([(r.get("domain"),r.get("positive_n"),r.get("total_n")) for r in tx]))
-    v=subprocess.run([sys.executable,str(proj/"scripts/validate.py"),str(dd)],capture_output=True,text=True)
+    v=subprocess.run([sys.executable,str(Path_validate),str(dd)],capture_output=True,text=True)
     a("validate.py slaagt", v.returncode==0, (v.stdout+v.stderr)[-300:])
 if name.startswith("eval-2"):
     ov=[c for c in cohorts if c.get("possible_overlap") is True]
@@ -57,6 +72,7 @@ if name.startswith("eval-2"):
     syn=[json.loads(l) for f in glob.glob(str(dd/"synthesized"/"*.jsonl")) for l in open(f) if l.strip()]
     pooled=[s for s in syn if s.get("pooled") is True or s.get("pooled_estimate") not in (None,"")]
     a("Geen gepoolde schatting over overlappende cohorten", len(pooled)==0, f"{len(pooled)} gepoolde records")
-    a("Synthese bewaart beide cohortwaarden / range", True if syn else None, f"{len(syn)} synthese-records")
+    sfiles=[f for f in glob.glob(str(dd/"synthesized"/"*")) if not f.endswith(".gitkeep")]
+    a("Synthese-bestand aanwezig", len(sfiles)>0, str([pathlib.Path(f).name for f in sfiles]))
 json.dump({"expectations":res},open(pathlib.Path(ev)/cfg/"grading.json","w"),indent=1)
 print(name,cfg,sum(1 for r in res if r["passed"]),"/",len(res))

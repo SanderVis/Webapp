@@ -6,7 +6,9 @@ Algemeen: één observation = één feature in één cohort op één timing/cuto
 present / absent / not_reported / not_assessed / unclear.
 - `absent`: de bron zegt expliciet dat het niet voorkwam (0/N of "none").
 - `not_reported`: de bron noemt het niet. Dit vul je alleen in als je de feature expliciet had verwacht (lijst in features.md); sla anders niets op.
-- `not_assessed`: de bron zegt dat het niet is onderzocht.
+- `not_assessed`: de bron zegt dat het niet is onderzocht ("not tested").
+- "not recorded" / "not systematically recorded" = `not_reported`. Gebruik `unclear` alleen als de bronformulering echt twee lezingen toelaat.
+- Alleen een kwalitatief woord ("common", "frequent") zonder getallen: `present`, `extraction_confidence: low`, geen n/N of percentage.
 
 ## Clinical
 `positive_n`, `total_n`, `percentage` zoals gerapporteerd, `definition`, `timing`, `severity`. Noemer kan per feature verschillen (bijv. alleen onderzochte patiënten): gebruik de noemer uit de bron, nooit het cohort-N als die niet gegeven is.

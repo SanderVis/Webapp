@@ -1,6 +1,6 @@
 ---
 name: ignota-evidence
-description: Bouwt per ziekte een cohort-gebaseerde, bron-traceerbare evidence-database (symptomen, labwaarden, beeldvorming, epidemiologie, behandeling) voor het verbeteren van Ignota (Bayesiaanse FUO/IUO-differentiaaldiagnosetool). Gebruik dit wanneer de gebruiker evidence wil verzamelen of extraheren voor een ziekte, een pilotziekte wil uitvoeren, artikelen/PDF's wil omzetten naar n/N-gegevens, of de Master Briefing Klinische Diagnostische Kennisdatabase noemt. Eén ziekte per aanroep. Niet voor het direct wijzigen van de Ignota-kennisbank (daarvoor ignota-kennisbank).
+description: Bouwt per ziekte een cohort-gebaseerde, bron-traceerbare evidence-database (n/N-prevalenties van symptomen, tekenen en labwaarden, beeldvorming, epidemiologie, behandeling) om Ignota (Bayesiaanse FUO/IUO-differentiaaldiagnosetool) te verbeteren. Gebruik deze skill altijd wanneer de gebruiker evidence, cohortgegevens of prevalenties voor een ziekte wil verzamelen of uit artikelen/PDF's/tekst wil extraheren, een pilotziekte uit de Master Briefing Klinische Diagnostische Kennisdatabase wil uitvoeren, cohort-overlap tussen studies wil controleren, of een evidence-synthese wil maken, ook als de skill niet bij naam wordt genoemd. Eén ziekte per aanroep. Niet voor het direct wijzigen van de Ignota-kennisbank zelf (daarvoor ignota-kennisbank).
 ---
 
 # ignota-evidence
@@ -24,9 +24,9 @@ Voer de stappen in volgorde uit; details in `references/workflow.md`.
 
 1. **Zoeken** – `python3 scripts/queries.py <ID>` geeft de zoekopdrachten (sectie 14). Prioriteer volgens de bronhiërarchie (sectie 15).
 2. **Triage** – per artikel een record in `data/<ID>/audit/triage.jsonl`: relevantie, design, N, cohorten, welke domeinen beschikbaar, referentiestandaard, overlapverdenking. Case reports niet voor prevalentie.
-3. **Cohort-extractie** – elk cohort apart in `data/<ID>/raw/cohorts.json` (schema: `schemas/cohort.schema.json`).
+3. **Cohort-extractie** – elk cohort apart in `data/<ID>/raw/cohorts.json` (schema: `schemas/cohort.schema.json`). Gebruik `.json`, niet `.jsonl`: `validate.py` behandelt elk `.jsonl` in raw/normalized als observations.
 4. **Observation-extractie** – per domein (clinical, laboratory, imaging, functional, microbiology, epidemiology, treatment) naar `data/<ID>/raw/<domein>.jsonl`, schema `schemas/observation.schema.json`. Regels: `references/extraction.md`.
-5. **Normalisatie** – feature-ids en eenheden naar `data/<ID>/normalized/`, met behoud van `original_text`. Vocabulaire: `references/features.md`.
+5. **Normalisatie** – schrijf ook echt een normalized-laag (`data/<ID>/normalized/<domein>.jsonl`): feature-ids uit `references/features.md` (prefixen SYM_, SIGN_, LAB_, EPI_, TX_ ...), met behoud van `original_text`. Ontbreekt een id, bedenk er een volgens de prefixregel en noteer hem in `audit/issues.md` als voorstel voor features.md; gebruik geen vrije namen als `fever` of `crp`, want die zijn later niet te koppelen.
 6. **Overlapcontrole** – zie `references/workflow.md` §Overlap. Markeer `possible_overlap`/`overlap_with`; tel nooit dubbel.
 7. **Synthese** – alleen als gerechtvaardigd; `references/synthesis.md`. Schrijf naar `synthesized/`; raw blijft onaangeroerd.
 8. **Validatie** – `python3 scripts/validate.py data/<ID>`. Los alle fouten op of documenteer ze in `audit/issues.md`.
